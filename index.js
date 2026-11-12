@@ -14,14 +14,22 @@ const movieList = document.getElementById('movieList');
 function renderMovies() {
     movieList.innerHTML = '';
 
+
     movieTitles.forEach((movieTitle, index) => {
+
+        const leftSide = document.createElement('div');
+        leftSide.className = "left-side";
+
         const item = document.createElement('li');
         item.className = "item";
+
+        const div = document.createElement('div');
+        div.className = "div"
 
         const poster = document.createElement('img');
         poster.src = moviePosters[index];
         poster.alt = '';
-        poster.width = 64; 
+        poster.width = 64;
         poster.className = "poster"
 
         const title = document.createElement('span');
@@ -32,10 +40,12 @@ function renderMovies() {
         deleteBtn.textContent = "Удалить";
         deleteBtn.className = "delete"
 
-        item.append(poster, title, deleteBtn);
+        leftSide.append(poster, title);
+        div.append(leftSide, deleteBtn);
+        item.append(div);
         movieList.append(item);
 
-        deleteBtn.addEventListener('click', () =>{
+        deleteBtn.addEventListener('click', () => {
             movieTitles.splice(index, 1);
             moviePosters.splice(index, 1);
             renderMovies();
@@ -54,11 +64,11 @@ addMovie.addEventListener('click', () => {
     const movieNameValue = movieName.value.trim();
     const moviePosterValue = moviePoster.value.trim();
 
-    if(movieNameValue == "" || moviePosterValue == ""){
+    if (movieNameValue == "" || moviePosterValue == "") {
         alert("ВВЕДИТЕ ЧТО-НИБУДЬ");
         return;
     }
-    else{
+    else {
         movieTitles.push(movieNameValue);
         moviePosters.push(moviePosterValue);
         movieNameValue.innerHTML = "";

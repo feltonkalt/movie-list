@@ -87,7 +87,7 @@ h1 {
     font-style: normal;
     font-variation-settings: "wdth" 100;
 }
-    
+
 .name {
     grid-column: 1;
     grid-row: 1;
@@ -108,4 +108,56 @@ h1 {
 #moviePoster {
     grid-row: 2;
     grid-column: 2;
+}
+
+
+ul {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    padding-left: 0;
+    margin-left: 0;
+    overflow-y: auto;
+}
+
+.div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    margin: 0 auto;
+    padding: 15px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.poster {
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.title {
+    font-size: 18px;
+    font-weight: bold;
+    color:#222f27;
+}
+
+.delete {
+    margin-left: auto;
+    background-color: transparent;
+    color: #a83232;
+    border: 1px solid #a83232;
+    border-radius: 8px;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.delete:hover {
+    background-color: #fdf0f0;
+}
+.left-side {
+    display: flex;
+    align-items: center;            
+    gap: 20px;                    
 }
