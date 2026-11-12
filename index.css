@@ -1,0 +1,24 @@
+.poster {}
+
+.title {}
+
+.delete {}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(196, 209, 205);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+section{
+    margin: 25px;
+    background-color: white;
+}
+.item{
+   
+}

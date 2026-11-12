@@ -16,12 +16,13 @@ function renderMovies() {
 
     movieTitles.forEach((movieTitle, index) => {
         const item = document.createElement('li');
+        item.className = "item";
 
         const poster = document.createElement('img');
         poster.src = moviePosters[index];
         poster.alt = '';
         poster.width = 64; 
-        poster.className = ""
+        poster.className = "poster"
 
         const title = document.createElement('span');
         title.textContent = movieTitle;
