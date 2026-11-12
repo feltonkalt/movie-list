@@ -6,7 +6,7 @@ const movieTitles = [
 const moviePosters = [
     'covers/space.jpg',
     'covers/house.jpg',
-    'covers/train.jpg',
+    'covers/train.avif',
 ];
 
 const movieList = document.getElementById('movieList');
@@ -20,13 +20,16 @@ function renderMovies() {
         const poster = document.createElement('img');
         poster.src = moviePosters[index];
         poster.alt = '';
-        poster.width = 64;
+        poster.width = 64; 
+        poster.className = ""
 
         const title = document.createElement('span');
         title.textContent = movieTitle;
+        title.className = "title"
 
         const deleteBtn = document.createElement('button');
         deleteBtn.textContent = "Удалить";
+        deleteBtn.className = "delete"
 
         item.append(poster, title, deleteBtn);
         movieList.append(item);
